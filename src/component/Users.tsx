@@ -1,6 +1,6 @@
 import React, {FC, useEffect, useState} from 'react';
 import {IUsers} from "./IUsers";
-import {getAllUsers, getUserPost} from "./usersServise";
+import {getAllUsers, getUserPost} from "./userServise";
 import UserComponent from "./User";
 const UsersComponents:FC = () => {
     const [users,setUsers] = useState<IUsers[]>([]);
