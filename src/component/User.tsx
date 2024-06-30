@@ -1,5 +1,6 @@
 import React, {FC} from "react";
 import {IUsers} from "./IUsers";
+import "./userPostStyle.css";
 
 interface IUser{
     user:IUsers
