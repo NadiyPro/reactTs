@@ -2,6 +2,8 @@ import React, {FC, useEffect, useState} from 'react';
 import {IUsers} from "./IUsers";
 import {getAllUsers, getUserPost} from "./userServise";
 import UserComponent from "./User";
+import {IPosts} from "./IPosts";
+
 const UsersComponents:FC = () => {
     const [users,setUsers] = useState<IUsers[]>([]);
 
@@ -9,8 +11,8 @@ const UsersComponents:FC = () => {
         getAllUsers()
             .then(value => setUsers(value.users))
     }, []);
-
-    const getPost =  (id:number) => {getUserPost(id).then(value =>setUsers(value.post))}
+    const [posts,setPosts] = useState<IPosts[]>([]);
+    const getPost =  (id:number) => {getUserPost(id).then(value =>setPosts(value.post))}
 
     return (
         <div>
@@ -25,7 +27,7 @@ const UsersComponents:FC = () => {
             <hr/>
             <div>
                 {
-
+                    posts.map(post => <div key={post.userId}><h2>{post.title}</h2> <p> {post.userId} </p> <p>{post.id} </p> <p>{post.body}</p></div>)
                 }
             </div>
         </div>
