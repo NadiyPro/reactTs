@@ -27,7 +27,7 @@ const UsersComponents:FC = () => {
             <hr/>
             <div>
                 {
-                    posts.map(post => <div key={post.userId}><h2>{post.title}</h2> <p> {post.userId} </p> <p>{post.id} </p> <p>{post.body}</p></div>)
+                    posts.map(post => <div key={post.userId}><h2>{post.title}</h2> <p> userId - {post.userId} </p> <p>id post - {post.id} </p> <p>body - {post.body}</p></div>)
                 }
             </div>
         </div>
