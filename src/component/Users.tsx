@@ -10,15 +10,24 @@ const UsersComponents:FC = () => {
             .then(value => setUsers(value.users))
     }, []);
 
-    const getPost =  (id:number) => {getUserPost(id).then(post =>console.log(post))}
+    const getPost =  (id:number) => {getUserPost(id).then(value =>setUsers(value.post))}
 
     return (
         <div>
-            {
-                users.map(user => <UserComponent
-                    key={user.id} user={user} getPost={getPost}
-                />)
-            }
+            <hr/>
+            <div>
+                {
+                    users.map(user => <UserComponent
+                        key={user.id} user={user} getPost={getPost}
+                    />)
+                }
+            </div>
+            <hr/>
+            <div>
+                {
+
+                }
+            </div>
         </div>
     );
 };
