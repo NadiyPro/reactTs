@@ -12,7 +12,7 @@ const UsersComponents:FC = () => {
             .then(value => setUsers(value.users))
     }, []);
     const [posts,setPosts] = useState<IPosts[]>([]);
-    const getPost =  (id:number) => {getUserPost(id).then(posts =>setPosts(posts))}
+    const getPost =  (id:number) => {getUserPost(id).then(value =>setPosts(value.posts))}
 
     return (
         <div>
