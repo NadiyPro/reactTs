@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import './App.css';
-import UsersComponents from "./components/Users";
+import UsersComponents from "./component/Users";
 
 
 const App:FC = () => {
