@@ -11,7 +11,7 @@ const UserComponent: FC<IUser> = ({user,getPost}) => {
         <div>
             {user.firstName} {user.lastName} {user.maidenName} {user.age}
             <button onClick = {() =>
-                getUserPost(user.id)}>Click</button>
+                getPost(user.id)}>Click</button>
         </div>
     )
 };
