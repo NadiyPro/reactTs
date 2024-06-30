@@ -9,7 +9,7 @@ const getAllUsers = () => {
     return axiosUsers.get('/users').then((response) => response.data)
 }
 const getUserPost = (id:number) => {
-    return axiosUsers.get('/users/'+id+'/posts').then((response) => response.data)
+    return axiosUsers.get('/users/' + id + '/posts').then((response) => response.data)
 }
 
 export {getAllUsers, getUserPost}
