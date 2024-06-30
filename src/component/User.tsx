@@ -8,9 +8,9 @@ interface IUser{
 const UserComponent: FC<IUser> = ({user,getPost}) => {
     return (
         <div>
-            {user.firstName} {user.lastName} {user.maidenName} {user.age}
-            <button onClick = {() =>
-            {getPost(user.id)}}>Click</button>
+            {user.id} {user.firstName} {user.lastName} {user.maidenName} age - {user.age}
+            <button onClick={() => {
+                getPost(user.id)}}>Click</button>
         </div>
     )
 };
