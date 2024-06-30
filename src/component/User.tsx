@@ -1,5 +1,6 @@
 import React, {FC} from "react";
 import {IUsers} from "./IUsers";
+import {getUserPost} from "./userServise";
 
 interface IUser{
     user:IUsers
@@ -10,7 +11,7 @@ const UserComponent: FC<IUser> = ({user,getPost}) => {
         <div>
             {user.firstName} {user.lastName} {user.maidenName} {user.age}
             <button onClick = {() =>
-                getPost(user.id)}>Click</button>
+                getUserPost(user.id)}>Click</button>
         </div>
     )
 };
