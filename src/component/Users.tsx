@@ -9,7 +9,7 @@ const UsersComponents:FC = () => {
 
     useEffect(() => {
         getAllUsers()
-            .then(value => setUsers(value.users))
+            .then(value  => setUsers(value.users))
     }, []);
     const [posts,setPosts] = useState<IPosts[]>([]);
     const getPost =  (id:number) => {getUserPost(id).then(value =>setPosts(value.posts))}
