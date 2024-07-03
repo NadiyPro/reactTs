@@ -1,16 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState} from 'react';
 
-interface IToggle {
-    className:string
-}
 const Toggle = (init:boolean) => {
-    const [toggle, setToggle] = useState(init)
+    const [toggle, setToggle] = useState<boolean>(init)
   const colorToggle = () => setToggle(value => !value)
-    return (
-        <div>
-            <button onClick={colorToggle}>click</button>
-        </div>
-    );
+    return [
+        toggle,colorToggle
+    ];
 };
 
 export default Toggle;
