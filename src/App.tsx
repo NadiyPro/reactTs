@@ -7,7 +7,7 @@ const App:FC = ()=> {
 
     return (
         <div>
-            <Toggle init={true}/>
+            <Toggle/>
         </div>
     );
 }
