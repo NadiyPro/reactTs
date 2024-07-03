@@ -8,7 +8,7 @@ export const useToggle = (init:boolean):ReturnValue => {
     const colorToggle = () => {
         setToggle(value => !value);
         setBackgroundColor(toggle? 'cornflowerblue' : 'rosybrown' )
-  }
+  };
 
     return [colorToggle, backgroundColor];
 }
