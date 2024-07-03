@@ -1,13 +1,13 @@
 import React, {FC} from 'react';
-import Toggle from "./component/Toggle";
 import "./module/styleToggle.css"
+import ToggleHooks from "./component/ToggleHooks";
 
 
 const App:FC = ()=> {
 
     return (
         <div>
-            <Toggle/>
+            <ToggleHooks/>
         </div>
     );
 }

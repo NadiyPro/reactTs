@@ -1,11 +1,13 @@
 import React, { useState} from 'react';
 
-const Toggle = (init:boolean) => {
+export const useToggle = (init:boolean) => {
     const [toggle, setToggle] = useState<boolean>(init)
-  const colorToggle = () => setToggle(value => !value)
-    return [
-        toggle,colorToggle
-    ];
+    const [backgroundColor, setBackgroundColor] = useState<string>('cornflowerblue')
+    const colorToggle = () => {
+        setToggle(value => !value);
+        setBackgroundColor(toggle? 'cornflowerblue' : 'rosybrown' )
+  }
+
+    return [colorToggle,backgroundColor];
 };
 
-export default Toggle;
