@@ -1,6 +1,7 @@
-import React, { useState} from 'react';
+import {HTMLProps, useState} from 'react';
 
-export const useToggle = (init:boolean,) => {
+type ReturnValue = [() => void,string]
+export const useToggle = (init:boolean):ReturnValue => {
     const [toggle, setToggle] = useState<boolean>(init)
     const [backgroundColor, setBackgroundColor] = useState<any>('cornflowerblue')
     const colorToggle = () => {
@@ -9,5 +10,4 @@ export const useToggle = (init:boolean,) => {
   }
 
     return [colorToggle,backgroundColor];
-};
-
+}
