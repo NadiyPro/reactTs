@@ -8,7 +8,7 @@ const Toggle = (init:boolean) => {
   const colorToggle = () => setToggle(value => !value)
     return (
         <div>
-
+            <button onClick={colorToggle}>click</button>
         </div>
     );
 };
