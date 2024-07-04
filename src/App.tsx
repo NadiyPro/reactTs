@@ -1,12 +1,12 @@
 import React, {FC} from 'react';
-import ToggleHooks from "./component/ToggleHooks";
+import Toggle from "./component/Toggle";
 
 
 const App:FC = ()=> {
 
     return (
         <div>
-            <ToggleHooks/>
+            <Toggle/>
         </div>
     );
 }

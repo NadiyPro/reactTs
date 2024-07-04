@@ -1,14 +1,13 @@
-import {useState} from 'react';
+import React, {FC} from 'react';
+import {useToggle} from "./ToggleHook";
 
-type ReturnValue = [() => void,string]
+const Toggle:FC= () => {
+    let [colorToggle,backgroundColor]=useToggle(false)
+    return (
+        <div style={{backgroundColor: backgroundColor, height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+            <button onClick = {colorToggle} style={{height: '70px', width: '200px', backgroundColor: 'darkcyan', fontSize:'24px'}}>click</button>
+        </div>
+    );
+};
 
-export const useToggle = (init:boolean):ReturnValue => {
-    const [toggle, setToggle] = useState<boolean>(init)
-    const [backgroundColor, setBackgroundColor] = useState<string>('cornflowerblue')
-    const colorToggle = () => {
-        setToggle(value => !value);
-        setBackgroundColor(toggle? 'cornflowerblue' : 'rosybrown' )
-  };
-
-    return [colorToggle, backgroundColor];
-}
+export default Toggle;
