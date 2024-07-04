@@ -19,7 +19,7 @@ const Prev:FC = () => {
             <button onClick={() => setCount(count + 1)}
                     style={{height: '60px', width: '200px', backgroundColor: 'darkcyan', fontSize: '24px', borderRadius: '15px'}}>Click Prev
             </button>
-            <button onClick={() => setCount(0)}
+            <button onClick={() => {setCount(0)}}
                     style={{height: '60px', width: '200px', backgroundColor: 'darkcyan', fontSize: '24px', borderRadius: '15px'}}>Clean counter
             </button>
         </div>
