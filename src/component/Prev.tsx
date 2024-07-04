@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, {FC, useState} from 'react';
 import {usePrevHook} from "./PrevHook";
 
-const Prev = () => {
+const Prev:FC = () => {
     const [count,setCount] = useState(0)
     let prevCount = usePrevHook(count);
     return (
