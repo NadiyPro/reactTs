@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import {useRef} from 'react';
 
 export const usePrevHook = (value:number) => {
     const currentValue = useRef<number>(value)
