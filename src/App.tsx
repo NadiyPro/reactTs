@@ -1,13 +1,28 @@
-import React, {FC} from 'react';
+import {Component} from 'react';
 import './App.css';
+import {IPosts} from "./module/IPosts";
 import UsersComponents from "./component/Users";
 
-const App:FC = () => {
+type AppState = {
+    userId: number | null;
+    posts: IPosts[]
+}
 
-  return (
-      <div>
-          <UsersComponents/>
-      </div>
-  );
+class App extends Component<any, AppState>{
+    state:AppState = {
+        userId:null,
+        posts: []
+    }
+    render() {
+        return (<div>
+            <div>
+                <UsersComponents/>
+            </div>
+            <hr/>
+            <div>
+
+            </div>
+        </div>);
+    }
 }
 export default App;

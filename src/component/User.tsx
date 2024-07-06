@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {IUsers} from "../module/IUsers";
 
-interface UserProps{
+type UserProps = {
     user:IUsers
 }
 class UserComponent extends Component<UserProps, {}>{
