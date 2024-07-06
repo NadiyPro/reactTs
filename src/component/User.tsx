@@ -1,17 +1,25 @@
 import React, {Component} from "react";
+import { IPosts } from "../module/IPosts";
 import {IUsers} from "../module/IUsers";
+import {getUserPost} from "../servise/userServise";
 
-interface PostState{
+interface UserProps{
     user:IUsers
-    getPost:(id:number) => void
 }
+interface UserState{
+    getPost: (id:number) => void
+    posts: IPosts []
+}
+class UserComponent extends Component<UserProps, UserState>{
 
-class UserComponent extends Component<{}, PostState>{
+    componentDidMount() {
+        getUserPost(this.props.user.id).then(value => this.setState({posts: value.posts}))
+    }
     render() {
         return (<div>
-            {this.state.user.id} {this.state.user.firstName} {this.state.user.lastName} {this.state.user.maidenName} age - {this.state.user.age}
+            {this.props.user.id} {this.props.user.firstName} {this.props.user.lastName} {this.props.user.maidenName} age - {this.props.user.age}
             <button onClick={() => {
-                this.state.getPost(this.state.user.id)
+                this.state.getPost(this.props.user.id)
             }}>Click
             </button>
         </div>);
