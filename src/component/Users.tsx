@@ -1,4 +1,4 @@
-import React, {Component, FC, useEffect, useState} from 'react';
+import React, {Component} from 'react';
 import {IUsers} from "../module/IUsers";
 import {getAllUsers, getUserPost} from "../servise/userServise";
 // import UserComponent from "./User";
@@ -20,7 +20,17 @@ class UsersComponents extends Component<{}, UsersState>{
     render() {
         return (
             <div>
-                {this.state.users.map(user=> (<div> {user.id} {user.firstName} {user.lastName} {user.maidenName} age - {user.age}</div>))}
+                <div>
+                    {this.state.users.map(user => (
+                        <div> {user.id} {user.firstName} {user.lastName} {user.maidenName} age - {user.age}</div>))}
+                </div>
+                <hr/>
+                <div>
+                    {
+                        this.state.posts.map(post => <div key={post.id}><h2>{post.title}</h2> <p> userId - {post.userId} id post
+                            - {post.id} </p> <p>body - {post.body}</p></div>)
+                    }
+                </div>
             </div>
         )
     }
