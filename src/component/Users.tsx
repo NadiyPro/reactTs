@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import {IUsers} from "../module/IUsers";
 import {getAllUsers} from "../servise/userServise";
-import {getUserPost} from "../servise/userServise";
 import UserComponent from "./User";
-import {IPosts} from "../module/IPosts";
 
 type UsersState = {
     users:IUsers[]

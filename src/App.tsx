@@ -3,7 +3,6 @@ import './App.css';
 import {IPosts} from "./module/IPosts";
 import UsersComponents from "./component/Users";
 import {getUserPost} from "./servise/userServise";
-import UserComponent from "./component/User";
 
 type AppState = {
     userId: number | null;
