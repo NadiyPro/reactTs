@@ -5,13 +5,11 @@ import UserComponent from "./User";
 
 type UsersState = {
     users:IUsers[],
-    getPost: (id:number) => void
 }
 
-class UsersComponents extends Component<{  }, UsersState>{
+class UsersComponents extends Component<{}, UsersState>{
     state: UsersState = {
-        users: [],
-        getPost: (id) => void
+        users: []
     }
 
     componentDidMount() {
@@ -22,7 +20,7 @@ class UsersComponents extends Component<{  }, UsersState>{
         return (
             <div>
                 <div>
-                    {this.state.users.map(user => (<UserComponent key={user.id} user={user} getPost={}/>))}
+                    {this.state.users.map(user => (<UserComponent key={user.id} user={user} />))}
                 </div>
             </div>
         )
