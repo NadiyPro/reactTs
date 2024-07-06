@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import {IUsers} from "../module/IUsers";
-import "./userPostStyle.css";
 
 interface PostState{
     user:IUsers
