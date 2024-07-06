@@ -1,4 +1,4 @@
-import React, {Component, FC} from "react";
+import React, {Component} from "react";
 import {IUsers} from "../module/IUsers";
 import "./userPostStyle.css";
 
@@ -18,3 +18,4 @@ class UserComponent extends Component<{}, PostState>{
         </div>);
     }
 }
+export default UserComponent

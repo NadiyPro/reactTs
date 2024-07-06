@@ -3,6 +3,7 @@ import {IUsers} from "../module/IUsers";
 import {getAllUsers, getUserPost} from "../servise/userServise";
 // import UserComponent from "./User";
 import {IPosts} from "../module/IPosts";
+import UserComponent from "./User";
 type UsersState = {
     users:IUsers[],
     posts: IPosts[]
@@ -21,8 +22,7 @@ class UsersComponents extends Component<{}, UsersState>{
         return (
             <div>
                 <div>
-                    {this.state.users.map(user => (
-                        <div> {user.id} {user.firstName} {user.lastName} {user.maidenName} age - {user.age}</div>))}
+                    {this.state.users.map(user => (<UserComponent key={user.id}/>))}
                 </div>
                 <hr/>
                 <div>
