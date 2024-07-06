@@ -10,10 +10,8 @@ interface PostState{
 class UserComponent extends Component<{}, PostState>{
 
     render() {
-        return (
-            <div>
+        return (<div>
 
-            </div>
-        );
+        </div>);
     }
 }

@@ -4,8 +4,8 @@ import {getAllUsers, getUserPost} from "../servise/userServise";
 // import UserComponent from "./User";
 import {IPosts} from "../module/IPosts";
 type UsersState = {
-    users:IUsers[]
-    posts:IPosts[]
+    users:IUsers[],
+    posts: IPosts[]
 }
 class UsersComponents extends Component<{}, UsersState>{
     state: UsersState = {
@@ -14,10 +14,8 @@ class UsersComponents extends Component<{}, UsersState>{
 }
     componentDidMount() {
         getAllUsers().then(value => this.state.users)
+        const getPost =  (id:number) => {getUserPost(id).then(value =>this.state.posts)}
     }
-    // componentDidMount(id:number) {
-    //     getUserPost(id).then(value => this.state.posts)
-    // }
 
     render() {
         return (
