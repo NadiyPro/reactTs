@@ -8,10 +8,13 @@ interface PostState{
 }
 
 class UserComponent extends Component<{}, PostState>{
-
     render() {
         return (<div>
-
+                {this.state.user.id} {this.state.user.firstName} {this.state.user.lastName} {this.state.user.maidenName} age - {this.state.user.age}
+                <button onClick={() => {
+                    this.state.getPost(this.state.user.id)
+                }}>Click
+                </button>
         </div>);
     }
 }

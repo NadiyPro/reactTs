@@ -35,3 +35,5 @@ class UsersComponents extends Component<{}, UsersState>{
         )
     }
 }
+
+export default UsersComponents
