@@ -14,8 +14,8 @@ class UsersComponents extends Component<{}, UsersState>{
         posts: []
 }
     componentDidMount() {
-        getAllUsers().then(value => this.state.users)
-        const getPost =  (id:number) => {getUserPost(id).then(value =>this.state.posts)}
+        getAllUsers().then(value => this.setState({users: value.users}));
+        const getPost =  (id:number) => {getUserPost(id).then(value => this.setState({posts: value.posts}))}
     }
 
     render() {
