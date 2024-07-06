@@ -1,15 +1,19 @@
 import React, {Component} from 'react';
 import {IUsers} from "../module/IUsers";
-import {getAllUsers, getUserPost} from "../servise/userServise";
-import {IPosts} from "../module/IPosts";
+import {getAllUsers} from "../servise/userServise";
 import UserComponent from "./User";
+
 type UsersState = {
     users:IUsers[],
+    getPost: (id:number) => void
 }
-class UsersComponents extends Component<{}, UsersState>{
+
+class UsersComponents extends Component<{  }, UsersState>{
     state: UsersState = {
         users: [],
+        getPost: (id) => void
     }
+
     componentDidMount() {
         getAllUsers().then(value => this.setState({users: value.users}));
     }
@@ -18,7 +22,7 @@ class UsersComponents extends Component<{}, UsersState>{
         return (
             <div>
                 <div>
-                    {this.state.users.map(user => (<UserComponent key={user.id} user={user} />))}
+                    {this.state.users.map(user => (<UserComponent key={user.id} user={user} getPost={}/>))}
                 </div>
             </div>
         )
