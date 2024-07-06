@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {IUsers} from "../module/IUsers";
 import {getAllUsers, getUserPost} from "../servise/userServise";
-// import UserComponent from "./User";
 import {IPosts} from "../module/IPosts";
 import UserComponent from "./User";
 type UsersState = {
@@ -12,7 +11,7 @@ class UsersComponents extends Component<{}, UsersState>{
     state: UsersState = {
         users: [],
         posts: []
-}
+    }
     componentDidMount() {
         getAllUsers().then(value => this.setState({users: value.users}));
         const getPost =  (id:number) => {getUserPost(id).then(value => this.setState({posts: value.posts}))}
