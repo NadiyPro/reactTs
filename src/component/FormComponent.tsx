@@ -32,11 +32,6 @@ const FormComponent = () => {
                     {errors.userId && <div>{errors.userId.message}</div>}
                 </label>
                 <label>
-                    Please enter your post number
-                    <input type={'number'} {...register('id')}/>
-                    {errors.id && <div>{errors.id.message}</div>}
-                </label>
-                <label>
                     Please write the title of the post
                     <input type={'text'} {...register('title')}/>
                     {errors.title && <div>{errors.title.message}</div>}
