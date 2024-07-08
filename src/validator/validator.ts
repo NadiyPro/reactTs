@@ -11,12 +11,12 @@ const validatorJoi = Joi.object({
     }),
     title:Joi.string().min(5).max(250).required().messages({
         "string.empty.base":"only chars allowed",
-        "string.min":"min is 5 allowed",
+        "string.min.base":"min is 5 allowed",
         "string.max.base":"max is 117 allowed"
     }),
     body:Joi.string().min(5).max(250).required().messages({
         "string.empty.base":"only chars allowed",
-        "string.min":"min is 5 allowed",
+        "string.min.base":"min is 5 allowed",
         "string.max.base":"max is 117 allowed"
     })
 })
