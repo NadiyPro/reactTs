@@ -6,7 +6,7 @@ import validatorJoi from "../validator/validator";
 
 const FormComponent = () => {
     const {handleSubmit,register, formState: {errors, isValid}} =
-        useForm<IPosts>({mode:'all', resolver: joiResolver(validatorJoi)})
+        useForm<IPosts>({mode:'onSubmit', resolver: joiResolver(validatorJoi)})
     const registerHandle = (value:IPosts) => {
         console.log(value)
     }

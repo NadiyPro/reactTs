@@ -1,19 +1,23 @@
 import Joi from "joi";
 
 const validatorJoi = Joi.object({
-    userId:Joi.string().min(1).max(117).required().messages({
-        "string.min.base":"min is 1",
+    userId:Joi.number().min(1).max(117).required().messages({
+        "number.min":"min is 1",
+        "number.max":"max is 117"
+    }),
+    id:Joi.number().min(1).max(117).required().messages({
+        "number.min":"min is 1",
+        "number.max":"max is 117"
+    }),
+    title:Joi.string().min(5).max(250).required().messages({
+        "string.empty.base":"only chars allowed",
+        "string.min":"min is 5 allowed",
         "string.max.base":"max is 117"
     }),
-    id:Joi.string().min(1).max(117).required().messages({
-        "string.min.base":"min is 1",
+    body:Joi.string().min(5).max(250).required().messages({
+        "string.empty.base":"only chars allowed",
+        "string.min":"min is 5 allowed",
         "string.max.base":"max is 117"
-    }),
-    title:Joi.string().required().messages({
-        "string.empty":"only chars allowed"
-    }),
-    body:Joi.string().required().messages({
-        "string.empty":"only chars allowed"
     })
 })
 
