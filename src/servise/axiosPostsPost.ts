@@ -1,20 +1,17 @@
 import axios from "axios";
 import IPosts from "../module/IPosts";
+import handleSubmit from "../component/FormComponent";
 
-
-
-const axiosPostsPost = function () {
+const registerHandle = (value:IPosts) => {
     axios.post('https://jsonplaceholder.typicode.com/posts', {
-        params: {
-            title: 'value.title',
-            body: 'value.body',
-            userId: 'value.userId',
-        },
+                title: value.title,
+                body: value.body,
+                userId: value.userId
+            ,
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         }
     })
         .then((response) => console.log(response.data))
 }
-
-export default axiosPostsPost
+export default registerHandle
