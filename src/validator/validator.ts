@@ -16,5 +16,4 @@ const validatorJoi = Joi.object({
         "string.max":"max is 117 allowed"
     })
 })
-
 export default validatorJoi

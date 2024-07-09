@@ -3,24 +3,13 @@ import {useForm} from "react-hook-form";
 import IPosts from "../module/IPosts";
 import {joiResolver} from "@hookform/resolvers/joi";
 import validatorJoi from "../validator/validator";
+import axiosPostsPost from "../servise/axiosPostsPost";
 
 const FormComponent = () => {
     const {handleSubmit,register, formState: {errors, isValid}} =
         useForm<IPosts>({mode:'onSubmit', resolver: joiResolver(validatorJoi)})
-    const registerHandle = (value:IPosts) => {
-        fetch('https://jsonplaceholder.typicode.com/posts', {
-            method: 'POST',
-            body: JSON.stringify({
-                title: value.title,
-                body: value.body,
-                userId: value.userId,
-            }),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-            },
-        })
-            .then((response) => response.json())
-            .then((json) => console.log(json));
+    const registerHandle = (response:IPosts) => {
+        axiosPostsPost();
     }
     return (
         <div style={{display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', flexDirection: "column"}}>
