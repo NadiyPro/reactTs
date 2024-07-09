@@ -7,10 +7,6 @@ const registerHandle = (value:IPosts) => {
                 title: value.title,
                 body: value.body,
                 userId: value.userId
-            ,
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        }
     })
         .then((response) => console.log(response.data))
 }
