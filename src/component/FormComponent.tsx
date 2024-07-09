@@ -3,11 +3,13 @@ import {useForm} from "react-hook-form";
 import IPosts from "../module/IPosts";
 import {joiResolver} from "@hookform/resolvers/joi";
 import validatorJoi from "../validator/validator";
-import registerHandle from "../servise/axiosPostsPost";
+import registerPost from "../servise/axiosPostsPost";
 
 const FormComponent = () => {
     const {handleSubmit,register, formState: {errors, isValid}} =
         useForm<IPosts>({mode:'onSubmit', resolver: joiResolver(validatorJoi)})
+
+    const registerHandle = registerPost;
 
     return (
         <div style={{display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', flexDirection: "column"}}>

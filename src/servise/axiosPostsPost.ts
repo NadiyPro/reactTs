@@ -2,7 +2,7 @@ import axios from "axios";
 import IPosts from "../module/IPosts";
 
 
-const registerHandle = (value:IPosts) => {
+const registerPost = (value:IPosts) => {
     axios.post('https://jsonplaceholder.typicode.com/posts', {
                 title: value.title,
                 body: value.body,
@@ -10,4 +10,4 @@ const registerHandle = (value:IPosts) => {
     })
         .then((response) => console.log(response.data))
 }
-export default registerHandle
+export default registerPost
