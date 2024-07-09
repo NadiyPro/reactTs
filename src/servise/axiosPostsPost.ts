@@ -1,6 +1,6 @@
 import axios from "axios";
 import IPosts from "../module/IPosts";
-import handleSubmit from "../component/FormComponent";
+
 
 const registerHandle = (value:IPosts) => {
     axios.post('https://jsonplaceholder.typicode.com/posts', {
