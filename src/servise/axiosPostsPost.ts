@@ -1,7 +1,6 @@
 import axios from "axios";
 import IPosts from "../module/IPosts";
 
-
 const registerPost = (value:IPosts) => {
     axios.post('https://jsonplaceholder.typicode.com/posts', {
                 title: value.title,

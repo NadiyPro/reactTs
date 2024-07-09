@@ -4,7 +4,6 @@ import IPosts from "../module/IPosts";
 import {joiResolver} from "@hookform/resolvers/joi";
 import validatorJoi from "../validator/validator";
 import registerPost from "../servise/axiosPostsPost";
-
 const FormComponent = () => {
     const {handleSubmit,register, formState: {errors, isValid}} =
         useForm<IPosts>({mode:'onSubmit', resolver: joiResolver(validatorJoi)})
