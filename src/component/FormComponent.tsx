@@ -7,9 +7,7 @@ import registerPost from "../servise/axiosPostsPost";
 const FormComponent = () => {
     const {handleSubmit,register, formState: {errors, isValid}} =
         useForm<IPosts>({mode:'onSubmit', resolver: joiResolver(validatorJoi)})
-
     const registerHandle = registerPost;
-
     return (
         <div style={{display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', flexDirection: "column"}}>
             <form onSubmit={handleSubmit(registerHandle)}
