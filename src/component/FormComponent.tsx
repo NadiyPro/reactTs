@@ -12,7 +12,7 @@ const FormComponent = () => {
 
     return (
         <div style={{display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', flexDirection: "column"}}>
-            <form onClick={handleSubmit(registerHandle)}
+            <form onSubmit={handleSubmit(registerHandle)}
                   style={{height: '40vh', width: '10vw',display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', flexDirection: "column"}}>
                 <label>
                     Please write your user id
