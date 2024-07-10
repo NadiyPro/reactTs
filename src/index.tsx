@@ -4,13 +4,23 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
+import Users from "./pages/Users";
+import Posts from "./pages/Posts";
+import Comments from "./pages/Comments";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
 const browserRouter = createBrowserRouter([
-    {path: '/', element: <MainLayout/>}
+    {path: '/',
+        element: <MainLayout/>,
+        children:[
+            {path:'users', element: <Users/>},
+            {path:'posts', element: <Posts/>},
+            {path:'comments', element: <Comments/>}
+        ]
+    }
 ])
 
 root.render(
