@@ -12,12 +12,12 @@ const getAllUsers = async ():Promise<{users: IUsers[]}> => {
     return await axiosUsers.get('/users').then((response) => response.data)
 }
 
-const getUserPost = async (id:number):Promise<{posts: IPosts[]}> => {
-    return await axiosUsers.get('/users/' + id + '/posts').then((response) => response.data)
+const getUserPost = async ():Promise<{posts: IPosts[]}> => {
+    return await axiosUsers.get('/posts').then((response) => response.data)
 }
 
-const getPostComments = async (id:number):Promise<{posts: IComments[]}> => {
-    return await axiosUsers.get('/posts/' + id + '/comments').then((response) => response.data)
+const getPostComments = async ():Promise<{posts: IComments[]}> => {
+    return await axiosUsers.get('/comments').then((response) => response.data)
 }
 
 export {getAllUsers, getUserPost, getPostComments}
