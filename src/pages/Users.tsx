@@ -8,14 +8,15 @@ const Users:FC = () => {
     const [users,setUsers] = useState<IUsers[]>([]);
 
     useEffect(() => {
-        getAllUsers()
-            .then(value  => setUsers(value.users))
+        getAllUsers().then(value => {
+            setUsers(value.users)
+        })
     }, []);
 
     return (
         <div>
             {
-                users.map(user => <div> {user.id} {user.firstName} {user.lastName} {user.maidenName} age - {user.age}</div>)
+                users.map(user => <div key={user.id}> {user.id} {user.firstName} {user.lastName} {user.maidenName} age - {user.age}</div>)
             }
         </div>
     );
