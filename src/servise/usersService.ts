@@ -23,4 +23,4 @@ const getPostComments = async ():Promise<{posts: IComments[]}> => {
     return await axiosUsers.get('/comments').then((response) => response.data)
 }
 
-export {getAllUsers, getAllPosts, getPostComments}
+export {getAllUsers, getAllPosts, getPostComments,getUserPost}
