@@ -9,14 +9,19 @@ const Users:FC = () => {
 
     useEffect(() => {
         getAllUsers().then(value => {
-            setUsers(value.users)
+          setUsers(value)
         })
     }, []);
-
+console.log(users)
     return (
         <div>
             {
-                users.map(user => <div key={user.id}> {user.id} {user.firstName} {user.lastName} {user.maidenName} age - {user.age}</div>)
+                users.map(user => <div key={user.id}> <p> id:{user.id} <br/> name: {user.name} <br/> username: {user.username} <br/> email: {user.email}</p>
+                    <p>address: <br/> suite:{user.address.suite} <br/> city:{user.address.city}
+                        <br/>zipcode:{user.address.zipcode} <br/> geo: <br/> lat:{user.address.geo.lat}
+                        <br/> lng:{user.address.geo.lng} <br/> phone: {user.phone} <br/> website:{user.website}  </p>
+                    <p> company: <br/> name: {user.company.name} <br/> catchPhrase: {user.company.catchPhrase} <br/> bs: {user.company.bs} </p>
+                </div>)
             }
         </div>
     );

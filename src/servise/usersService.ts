@@ -8,7 +8,7 @@ let axiosUsers = axios.create({
     headers: {'Content-Type':'application/json'}
 })
 
-const getAllUsers = async ():Promise<{users: IUsers[]}> => {
+const getAllUsers = async ():Promise<IUsers[]> => {
     return await axiosUsers.get('/users').then((response) => response.data)
 }
 
