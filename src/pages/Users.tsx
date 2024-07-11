@@ -13,7 +13,7 @@ const Users:FC = () => {
           setUsers(value)
         })
     }, []);
-console.log(users)
+
     return (
         <div>
             {
