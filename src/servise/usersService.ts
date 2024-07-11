@@ -12,8 +12,8 @@ const getAllUsers = async ():Promise<IUsers[]> => {
     return await axiosUsers.get('/users').then((response) => response.data)
 }
 
-const getUserPost = async (id:string):Promise<IUsers[]> => {
-    return await axiosUsers.get('/users' + id + '/posts').then((response) => response.data)
+const getUserPost = async (userId:string):Promise<IPosts[]> => {
+    return await axiosUsers.get('/users' + userId + '/posts').then((response) => response.data)
 }
 const getAllPosts = async ():Promise<IPosts[]> => {
     return await axiosUsers.get('/posts').then((response) => response.data)

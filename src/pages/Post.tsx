@@ -2,23 +2,23 @@ import React, {useEffect, useState} from 'react';
 import {useLocation, useParams} from "react-router-dom";
 import {getUserPost} from "../servise/usersService";
 import {IPosts} from "../module/IPosts";
-import {IUsers} from "../module/IUsers";
-import posts from "./Posts";
+
+
 
 const Post = () => {
     let {id} = useParams();
     let location= useLocation();
     let state = location.state
-    let [post, setPost] = useState<IPosts | null>(null)
+    let [post, setPost] = useState<IPosts[]>([])
     useEffect(() => {
-        getUserPost(state.id + '').then((value:IPosts[]) => {setPost(value)})
+        getUserPost(state.userId + '').then((value) => {setPost(value)})
     }, [id]);
 
     return (
         <div>
-            {
-                post?.title
-            }
+
+            dddd
+
         </div>
     );
 };
