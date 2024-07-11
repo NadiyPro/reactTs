@@ -8,6 +8,7 @@ import Users from "./pages/Users";
 import Posts from "./pages/Posts";
 import Comments from "./pages/Comments";
 import ErrorLayout from "./layouts/ErrorLayout";
+import Post from "./pages/Post";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -19,8 +20,8 @@ const browserRouter = createBrowserRouter([
         errorElement: <ErrorLayout/>,
         children:[
             {path:'users', element: <Users/>},
+            {path:'post/:id', element: <Post/>},
             {path:'posts', element: <Posts/>},
-
             {path:'comments', element: <Comments/>}
         ]
     }
