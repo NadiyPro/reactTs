@@ -5,7 +5,6 @@ import {IUsers} from "../module/IUsers";
 
 interface IUser{
     user:IUsers
-    getPost: (userId:string) => void
 }
 const User:FC<IUser> = ({user}) => {
 
