@@ -21,7 +21,6 @@ const browserRouter = createBrowserRouter([
         errorElement: <ErrorLayout/>,
         children:[
             {path:'users', element: <Users/>},
-            {path:'users/:id', element: <Post/>},
             {path:'posts', element: <Posts/>},
             {path:'comments', element: <Comments/>}
         ]
