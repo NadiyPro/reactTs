@@ -1,6 +1,5 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {FC} from 'react';
 import {IPosts} from "../module/IPosts";
-import {getUserPost} from "../servise/usersService";
 
 interface IPost{
     post:IPosts
