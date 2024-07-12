@@ -6,7 +6,7 @@ const Post = () => {
 
     return (
         <div>
-            ffff
+            ffff {id}
         </div>
     );
 };
