@@ -3,6 +3,7 @@ import {getAllPosts} from "../servise/usersService";
 import {IPosts} from "../module/IPosts";
 import Post from "../component/Post";
 
+
 const Posts:FC = () => {
     const [posts,setPosts] = useState<IPosts[]>([]);
 
@@ -11,6 +12,7 @@ const Posts:FC = () => {
             setPosts(value)
         })
     }, []);
+
     return (
         <div>
             {

@@ -8,11 +8,14 @@ import Users from "./pages/Users";
 import Posts from "./pages/Posts";
 import Comments from "./pages/Comments";
 import ErrorLayout from "./layouts/ErrorLayout";
-import Post from "./pages/Post";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+function Post() {
+    return null;
+}
 
 const browserRouter = createBrowserRouter([
     {path: '/',
