@@ -12,7 +12,7 @@ const getAllUsers = async ():Promise<IUsers[]> => {
     return await axiosUsers.get('/users').then((response) => response.data)
 }
 
-const getUserPost = async (userId:number):Promise<IPosts[]> => {
+const getUserPost = async (userId:string):Promise<IPosts[]> => {
     return await axiosUsers.get('/users/' + userId + '/posts').then((response) => response.data)
 }
 const getAllPosts = async ():Promise<IPosts[]> => {
