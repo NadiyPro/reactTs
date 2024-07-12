@@ -11,7 +11,7 @@ const User:FC<IUser> = ({user}) => {
 
     return (
         <div>
-            <div key={user.id}><h4> id:{user.id} </h4> <p> name: {user.name}
+            <div><h4> id:{user.id} </h4> <p> name: {user.name}
                 <br/> username: {user.username} <br/> email: {user.email}<br/></p>
 
                 <NavLink to={user.id.toString()}>posts</NavLink>

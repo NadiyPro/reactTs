@@ -20,7 +20,7 @@ const Users:FC = () => {
     return (
         <div>
             {
-                users.map(user => <User user={user} getPost={getPost}/>)
+                users.map(user => <User key={user.id} user={user} getPost={getPost}/>)
             }
         </div>
     );

@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import { getPostComments} from "../servise/usersService";
 import {IComments} from "../module/IComments";
 import Comment from "../component/Comment";
 
-const Comments = () => {
+const Comments:FC  = () => {
     const [comments,setComments] = useState<IComments[]>([]);
 
     useEffect(() => {
@@ -13,7 +13,7 @@ const Comments = () => {
     }, []);
     return (
         <div>
-            {comments.map(comment => <Comment comment={comment}/>)}
+            {comments.map(comment => <Comment key={comment.id} comment={comment}/>)}
         </div>
     );
 };
