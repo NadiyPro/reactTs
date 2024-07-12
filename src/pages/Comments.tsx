@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { getPostComments} from "../servise/usersService";
 import {IComments} from "../module/IComments";
+import Comment from "../component/Comment";
 
 const Comments = () => {
     const [comments,setComments] = useState<IComments[]>([]);
@@ -12,8 +13,7 @@ const Comments = () => {
     }, []);
     return (
         <div>
-            {comments.map(comment => <div key={comment.id}><h4>postId: {comment.postId}</h4>id: {comment.id} <br/>
-                name: {comment.name} <br/> email: {comment.email} <br/> body: {comment.body} </div>)}
+            {comments.map(comment => <Comment comment={comment}/>)}
         </div>
     );
 };
