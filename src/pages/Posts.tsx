@@ -1,17 +1,23 @@
 import React, {FC, useEffect, useState} from 'react';
-import {getAllPosts} from "../servise/usersService";
+import {getAllPosts,getPosts} from "../servise/usersService";
 import {IPosts} from "../module/IPosts";
 import Post from "../component/Post";
+import {useParams} from "react-router-dom";
 
 
 const Posts:FC = () => {
+    let {id} = useParams();
     const [posts,setPosts] = useState<IPosts[]>([]);
 
     useEffect(() => {
-        getAllPosts().then(value => {
+        if(id){
+            getPosts(id).then(value => {
+                setPosts(value)
+            })
+        } else {getAllPosts().then(value => {
             setPosts(value)
-        })
-    }, []);
+        })}
+    }, [id]);
 
     return (
         <div>
