@@ -10,7 +10,7 @@ import Comments from "./pages/Comments";
 import Posts from "./pages/Posts";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+    document.getElementById('root') as HTMLElement
 );
 
 const browserRouter = createBrowserRouter([
