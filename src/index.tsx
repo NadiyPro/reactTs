@@ -20,6 +20,7 @@ const browserRouter = createBrowserRouter([
         children:[
             {path:'users', element: <Users/>},
             {path:'users/:id/posts', element: <Posts/>},
+            {path:'/posts', element: <Posts/>},
             {path:'comments', element: <Comments/>}
         ]
     }
