@@ -30,5 +30,4 @@ const browserRouter = createBrowserRouter([
 root.render(
     <RouterProvider router={browserRouter} />
 );
-
 reportWebVitals();
