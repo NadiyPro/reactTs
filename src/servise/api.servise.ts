@@ -13,18 +13,13 @@ axiosInstance.interceptors.request.use((request:any) => {
         request.headers.set('Authorization', 'Bearer' + retrieveLocalStorage<AuthTokenModule>('tokenPair').access);
         return request;
     }
-})
+});
 
 const authService = {
-    authentication: async (authData:AuthModule):Promise<boolean> => {
-        let response;
-        try {
-            response = await axiosInstance.post<AuthTokenModule>('/auth', authData);
-            localStorage.setItem('tokenPair', JSON.stringify(response.data))
-        }catch (e){
-            console.log(e);
-        }
-        return !!(response?.data?.access && response?.data?.refresh );
+    authentication: async (authData: AuthModule): Promise<boolean> => {
+      const response = await axiosInstance.post<AuthTokenModule>('/auth', authData);
+      localStorage.setItem('tokenPair', JSON.stringify(response.data));
+      return !!(response?.data?.access && response?.data?.refresh );
     },
 
     refresh: async () => {

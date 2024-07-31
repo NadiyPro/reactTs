@@ -8,7 +8,7 @@ const FormComponent = () => {
 
     const [isAuthState, setIsAuthState] = useState<boolean>(false);
 
-    const authenticate = async (formData:AuthModule) => {
+    const authenticate = async (formData: AuthModule) => {
         const isAuth = await authService.authentication(formData);
         setIsAuthState(isAuth);
     }
