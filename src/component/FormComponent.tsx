@@ -11,6 +11,7 @@ const FormComponent = () => {
     const authenticate = async (formData: AuthModule) => {
         const isAuth = await authService.authentication(formData);
         setIsAuthState(isAuth);
+        console.log(isAuth)
     }
 
     return (

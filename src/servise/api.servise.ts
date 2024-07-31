@@ -9,10 +9,10 @@ let axiosInstance = axios.create({
     headers: {}
 });
 axiosInstance.interceptors.request.use((request:any) => {
-    if(localStorage.getItem('tokenPair') && request.url !== '/auth' && request.url !== '/auth/refresh'){
+    if(localStorage.getItem('tokenPair') && request.url !== '/auth' && request.url !== '/auth/refresh')
         request.headers.set('Authorization', 'Bearer' + retrieveLocalStorage<AuthTokenModule>('tokenPair').access);
         return request;
-    }
+
 });
 
 const authService = {
