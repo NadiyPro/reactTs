@@ -1,4 +1,5 @@
 import {createBrowserRouter} from "react-router-dom";
+import * as React from "react";
 import AuthPage from "../pages/AuthPage";
 import CarsPage from "../pages/CarsPage";
 import MainLayout from "../layouts/MainLayout";

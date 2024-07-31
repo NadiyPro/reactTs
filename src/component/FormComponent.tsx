@@ -6,7 +6,7 @@ import {authService} from "../servise/api.servise";
 const FormComponent = () => {
     const{handleSubmit, register} = useForm<AuthModule>();
 
-    const [isAuthState, setIsAuthState] = useState<boolean>(false);
+    // const [isAuthState, setIsAuthState] = useState<boolean>(false);
 
     const authenticate = async (formData:AuthModule) => {
         const isAuth = await authService.authentication(formData);
