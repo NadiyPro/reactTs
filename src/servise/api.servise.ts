@@ -7,15 +7,16 @@ let axiosInstance = axios.create({
 });
 
 const authService = {
-    authentication: async (authData:AuthModule) => {
+    authentication: async (authData:AuthModule):Promise<boolean> => {
         let response;
         try {
             response = await axiosInstance.post<AuthTokenModule>('/auth', authData);
-            console.log(response)
+            localStorage.setItem('tokenPair', JSON.stringify(response.data))
 
         }catch (e){
             console.log(e)
         }
+        return !!(response?.data?.access && response?.data?.refresh )
     }
 }
 
