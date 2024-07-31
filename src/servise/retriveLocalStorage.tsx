@@ -1,4 +1,4 @@
-const retrieveLocalStorage = <T,> (key:string) => {
+const retrieveLocalStorage = <T, > (key:string) => {
     const pairJSON = localStorage.getItem(key) || '';
     if(!pairJSON){
         return {} as T;

@@ -8,7 +8,7 @@ let axiosInstance = axios.create({
     baseURL: 'http://owu.linkpc.net/carsAPI/v2',
     headers: {}
 });
-axiosInstance.interceptors.request.use((request) => {
+axiosInstance.interceptors.request.use((request:any) => {
     if(localStorage.getItem('tokenPair') && request.url !== '/auth' && request.url !== '/auth/refresh'){
         request.headers.set('Authorization', 'Bearer' + retrieveLocalStorage<AuthTokenModule>('tokenPair').access);
         return request;
