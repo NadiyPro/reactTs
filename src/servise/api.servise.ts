@@ -35,9 +35,9 @@ const authService = {
 }
 
 const carsService = {
-    getCars: async () => {
-        const response = await axiosInstance.get<CarsModule>('/cars');
-        console.log(response)
+    getCars: async (page:string) => {
+        const response = await axiosInstance.get<CarsModule>('/cars', {params:{page:page}});
+        return response.data
     }
 }
 
