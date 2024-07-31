@@ -6,8 +6,8 @@ const HeaderComponent = () => {
     return (
         <div className={style.header}>
             <ul>
-                <li><NavLink to={'/'}></NavLink></li>
-                <li><NavLink to={'cars'}></NavLink></li>
+                <li><NavLink to={'/'}>auth page</NavLink></li>
+                <li><NavLink to={'cars'}>cars page</NavLink></li>
             </ul>
             <hr/>
         </div>
