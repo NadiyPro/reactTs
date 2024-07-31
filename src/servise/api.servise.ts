@@ -1,6 +1,7 @@
 import axios from "axios";
 import {AuthModule} from "../module/AuthModule";
 import {AuthTokenModule} from "../module/AuthTokenModule";
+import {CarsModule} from "../module/CarsModule";
 
 let axiosInstance = axios.create({
     baseURL: 'http://owu.linkpc.net/carsAPI/v2'
@@ -25,4 +26,11 @@ const authService = {
     }
 }
 
-export {authService}
+const carsService = {
+    getCars: async (page: string = '1'):Promise<CarsModule | null> => {
+        const response = await axiosInstance.get<CarsModule>('/cars', {params: {page:page}});
+        return responce.data;
+    }
+}
+
+export {authService, carsService}
