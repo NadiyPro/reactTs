@@ -19,9 +19,8 @@ const authService = {
     authentication: async (authData: AuthModule): Promise<boolean> => {
       const response = await axiosInstance.post<AuthTokenModule>('/auth', authData);
       localStorage.setItem('tokenPair', JSON.stringify(response.data));
-      return !!(response?.data?.access && response?.data?.refresh );
+      return !!(response?.data?.access && response?.data?.refresh);
     },
-
     refresh: async () => {
         const refreshToken = retrieveLocalStorage<AuthTokenModule>('tokenPair').refresh;
         const response = await axiosInstance.post<AuthTokenModule>('/auth/refresh', {refresh:refreshToken})
@@ -30,7 +29,7 @@ const authService = {
 }
 
 const carsService = {
-    getCars: async (page:string) => {
+    getCars: async (page:string = '1'): Promise<CarsModule> => {
         const response = await axiosInstance.get<CarsModule>('/cars', {params:{page:page}});
         return response.data
     }
