@@ -14,9 +14,14 @@ const authService = {
             localStorage.setItem('tokenPair', JSON.stringify(response.data))
 
         }catch (e){
-            console.log(e)
+            console.log(e);
         }
-        return !!(response?.data?.access && response?.data?.refresh )
+        return !!(response?.data?.access && response?.data?.refresh );
+    },
+
+    refresh: async (refreshToken: string) => {
+        const response = await axiosInstance.post<AuthTokenModule>('/auth/refresh', {refresh:refreshToken})
+        localStorage.setItem('tokenPair', JSON.stringify(response.data))
     }
 }
 

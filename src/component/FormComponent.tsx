@@ -15,6 +15,8 @@ const FormComponent = () => {
 
     return (
         <div>
+            <h3>login form</h3>
+            {isAuthState ? <div>ok</div> : <div>not ok</div>}
             <form onClick={handleSubmit(authenticate)}>
                 <input type="text" {...register('username')}/>
                 <input type="text" {...register('password')}/>
