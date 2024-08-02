@@ -4,7 +4,14 @@ import {AuthModule} from "../module/AuthModule";
 import {authService} from "../servise/api.servise";
 
 const FormComponent = () => {
-    const{handleSubmit, register} = useForm<AuthModule>();
+    const{handleSubmit, register} = useForm<AuthModule>(
+        {
+            defaultValues:{
+                username: 'NadiyPro',
+                password: 'NadiyPro$123'
+            }
+        }
+    );
 
     const [isAuthState, setIsAuthState] = useState<boolean>(false);
     const authenticate = async (formData: AuthModule) => {

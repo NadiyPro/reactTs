@@ -38,8 +38,8 @@ const CarsPage = () => {
                     }
                 }
             }
+            getCarsDate();
         }
-        getCarsDate();
         }, [query]);
 
     return (
