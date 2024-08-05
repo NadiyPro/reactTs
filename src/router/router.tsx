@@ -4,13 +4,14 @@ import PostsPage from "../page/PostsPage";
 import CommentsPage from "../page/CommentsPage";
 import React from "react";
 import MainLayout from "../layout/MainLayout";
-import HeaderComponent from "../component/HeaderComponent";
+import ErrorElement from "../layout/errorElement";
 
 export const router = createBrowserRouter(
     [
         {
             path:'/',
             element: <MainLayout/>,
+            errorElement:<ErrorElement/>,
             children: [
                 {path:'users', element: <UsersPage/>},
                 {path:'posts', element: <PostsPage/>},
