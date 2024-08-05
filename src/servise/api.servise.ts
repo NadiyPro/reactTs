@@ -1,18 +1,17 @@
 import {AuthModule} from "../module/AuthModule";
 import {AuthTokenModule} from "../module/AuthTokenModule";
 import {CarsModule} from "../module/CarsModule";
-import retrieveLocalStorage from "./retriveLocalStorage";
 import axios from "axios";
+import {retrieveLocalStorage} from "./retriveLocalStorage";
 
 let axiosInstance = axios.create({
-    baseURL: 'http://owu.linkpc.net/carsAPI/v2',
-    headers: {}
+    baseURL: 'http://owu.linkpc.net/carsAPI/v2'
+
 });
-axiosInstance.interceptors.request.use((request) => {
+axiosInstance.interceptors.request.use(request => {
     if(localStorage.getItem('tokenPair') && request.url !== '/auth' && request.url !== '/auth/refresh')
         request.headers.set('Authorization', 'Bearer' + retrieveLocalStorage<AuthTokenModule>('tokenPair').access);
         return request;
-
 });
 
 const authService = {
@@ -29,9 +28,10 @@ const authService = {
 }
 
 const carsService = {
-    getCars: async (page:string = '1'): Promise<CarsModule> => {
-        const response = await axiosInstance.get<CarsModule>('/cars', {params:{page:page}});
-        return response.data
+    getCars: async (page: string = '1'): Promise<CarsModule | null> => {
+        const response = await axiosInstance.get<CarsModule>('/cars', {params:{page: page}});
+        return response.data;
+
     }
 }
 

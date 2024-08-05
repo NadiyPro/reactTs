@@ -7,4 +7,4 @@ const retrieveLocalStorage = <T, > (key:string) => {
     return pair as T;
 };
 
-export default retrieveLocalStorage;
+export {retrieveLocalStorage};

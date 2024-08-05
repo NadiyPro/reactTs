@@ -1,7 +1,7 @@
 import {createBrowserRouter} from "react-router-dom";
 import AuthPage from "../pages/AuthPage";
-import CarsPage from "../pages/CarsPage";
 import MainLayout from "../layouts/MainLayout";
+import CarsPage from "../pages/CarsPage";
 
 const router = createBrowserRouter([
     {
