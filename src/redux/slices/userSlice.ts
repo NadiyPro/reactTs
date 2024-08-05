@@ -28,7 +28,7 @@ export const userSlice = createSlice({
                 state.isLoaded = true;
             })
             .addCase(loadUsers.rejected, (state, action) => {
-
+                console.log(action.payload)
             })
             .addMatcher(isFulfilled(loadUsers), (state, action) => {
                 // state.isLoaded = true;
