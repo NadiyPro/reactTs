@@ -14,7 +14,7 @@ const App = () => {
     useEffect(() => {
         dispatch(userActions.loadUsers());
         dispatch(postActions.loadPosts());
-        dispatch(commentActions.loadComments);
+        dispatch(commentActions.loadComments());
     }, []);
 
 
