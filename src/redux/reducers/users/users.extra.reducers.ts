@@ -1,12 +1,13 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
-import {userService} from "../../../service/api.service";
 import {AxiosError} from "axios";
+import {userService} from "../../../service/api.service";
 
-export const loadUser = createAsyncThunk(
+export const loadUsers = createAsyncThunk(
     'userSlice/loadUsers',
-    async (id:number, thunkAPI) => {
+    async (_, thunkAPI) => {
         try {
-            let response = await userService.getById(id);
+            let response = await userService.getAll();
+            // thunkAPI.dispatch(userActions.xxx());
             return thunkAPI.fulfillWithValue(response);
         } catch (e) {
             let error = e as AxiosError;
