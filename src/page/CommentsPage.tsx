@@ -1,22 +1,11 @@
-import React, {useEffect} from 'react';
-import {useAppDispatch, useAppSelector} from "../redux/store";
-import {commentActions} from "../redux/slices/commentSlice";
+import React from 'react';
+import Comments from "../component/Comments";
 
 const CommentsPage = () => {
-    let {commentSlice:{comments}} = useAppSelector(state => state);
-
-    let dispatch = useAppDispatch();
-
-    useEffect(() => {
-        dispatch(commentActions.loadComments());
-    }, []);
-
 
     return (
         <div>
-
-            {comments.map(comment => <div key={comment.id}>{comment.id} {comment.body}</div>)}
-
+            <Comments/>
         </div>
     );
 };
