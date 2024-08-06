@@ -5,7 +5,7 @@ import {useParams} from "react-router-dom";
 
 const User = () => {
     let {id} = useParams();
-    let user = useAppSelector(state => state.userSlice.user);
+    let user = useAppSelector(state => state.userStore.user);
 
     let dispatch = useAppDispatch();
 

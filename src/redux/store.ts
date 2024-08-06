@@ -7,9 +7,9 @@ import {commentSlice} from "./slices/commentSlice";
 
 export const store = configureStore({
     reducer: {
-        userSlice: userSlice.reducer,
-        postSlice: postSlice.reducer,
-        commentSlice: commentSlice.reducer
+        userStore: userSlice.reducer,
+        postStore: postSlice.reducer,
+        commentStore: commentSlice.reducer
     }
 });
 

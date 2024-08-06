@@ -3,7 +3,7 @@ import {useAppDispatch, useAppSelector} from "../redux/store";
 import {postActions} from "../redux/slices/postSlice";
 
 const Posts = () => {
-    let {postSlice:{posts}} = useAppSelector(state => state);
+    let {postStore:{posts}} = useAppSelector(state => state);
 
     let dispatch = useAppDispatch();
 

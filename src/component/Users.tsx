@@ -4,7 +4,7 @@ import {userActions} from "../redux/slices/userSlice";
 import {NavLink} from "react-router-dom";
 
 const Users = () => {
-    let {userSlice: {users,isLoaded}} = useAppSelector(state => state);
+    let {userStore: {users,isLoaded}} = useAppSelector(state => state);
 
     let dispatch = useAppDispatch();
 

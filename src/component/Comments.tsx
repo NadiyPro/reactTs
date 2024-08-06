@@ -3,7 +3,7 @@ import {useAppDispatch, useAppSelector} from "../redux/store";
 import {commentActions} from "../redux/slices/commentSlice";
 
 const Comments = () => {
-    let {commentSlice:{comments}} = useAppSelector(state => state);
+    let {commentStore:{comments}} = useAppSelector(state => state);
 
     let dispatch = useAppDispatch();
 

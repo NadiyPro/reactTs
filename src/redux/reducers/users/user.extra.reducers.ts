@@ -3,7 +3,7 @@ import {userService} from "../../../service/api.service";
 import {AxiosError} from "axios";
 
 export const loadUser = createAsyncThunk(
-    'userSlice/loadUsers',
+    'userSlice/loadUser',
     async (id:number, thunkAPI) => {
         try {
             let response = await userService.getById(id);
