@@ -7,7 +7,8 @@ export const loadPost = createAsyncThunk(
     async (id:number, thunkAPI) => {
         try {
             let response = await postService.getById(id);
-            return thunkAPI.fulfillWithValue(response);
+            return thunkAPI.fulfillWithValue
+            (`id: ${response.id}  title: ${response.title}  body: ${response.body}`);
         } catch (e) {
             let error = e as AxiosError;
             return thunkAPI.rejectWithValue(error?.response?.data);
