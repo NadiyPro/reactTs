@@ -1,14 +1,23 @@
-import {createSlice} from "@reduxjs/toolkit";
+import {createSlice, isRejected} from "@reduxjs/toolkit";
 import {IComment} from "../../models/IComment";
 import {loadComments} from "../reducers/comments/comments.extra.reducers";
+import {loadPosts} from "../reducers/posts/posts.extra.reducers";
+import {loadPost} from "../reducers/posts/post.extra.reducers";
+import {loadComment} from "../reducers/comments/comment.extra.reducers";
 
 
 type CommentSliceType = {
     comments: IComment[],
+    isLoaded: boolean,
+    comment: IComment | null,
+    error: string
 }
 
 const commentInitState: CommentSliceType = {
     comments: [],
+    isLoaded: false,
+    comment: null,
+    error: ''
 }
 
 export const commentSlice = createSlice({
@@ -20,14 +29,18 @@ export const commentSlice = createSlice({
             .addCase(loadComments.fulfilled, (state, action) => {
                 state.comments = action.payload;
             })
-            .addCase(loadComments.rejected, (state, action) => {
+            .addCase(loadComment.fulfilled, (state, action) => {
                 console.log(action.payload)
-            });
+            })
+            .addMatcher(isRejected (loadPosts,loadPost), (state, action) => {
+                state.error = action.payload as string;
+            })
     }
 });
 
 export const commentActions = {
     ...commentSlice.actions,
-    loadComments
+    loadComments,
+    loadComment
 
 }

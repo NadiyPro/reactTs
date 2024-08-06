@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {useParams} from "react-router-dom";
+import {NavLink, useParams} from "react-router-dom";
 import {useAppDispatch, useAppSelector} from "../redux/store";
 import {postActions} from "../redux/slices/postSlice";
 
@@ -15,6 +15,7 @@ const Post = () => {
     return (
         <div>
             {JSON.parse(JSON.stringify(post))}
+            <NavLink to={'/posts/' + id + '/comments'}>detail comments</NavLink>
         </div>
     );
 };
