@@ -13,10 +13,10 @@ const Posts = () => {
         dispatch(postActions.loadPosts());
         if(id) dispatch(postActions.loadPost(+id));
 
-    }, []);
+    }, [id]);
     return (
         <div>
-            {posts.map(post => <div key={post.id}>{post.id} {post.title} <NavLink to={'/posts/' + id + '/comments'}>detail comments</NavLink> </div>)}
+            {posts.map(post => <div key={post.id}>userId:{post.userId} id:{post.id} title:{post.title} body:{post.body} <NavLink to={'/posts/' + post.userId + '/comments'}>detail comments</NavLink> </div>)}
         </div>
     );
 };

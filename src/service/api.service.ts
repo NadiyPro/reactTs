@@ -26,8 +26,8 @@ export const postService = {
         let response = await axiosInstance.get<IPost[]>(urls.posts.base);
         return response.data;
     },
-    getById: async (id:number):Promise<IPost>=> {
-        const response = await axiosInstance.get<IPost>(urls.posts.byId(id));
+    getById: async (userId:number):Promise<IPost>=> {
+        const response = await axiosInstance.get<IPost>(urls.posts.byId(userId));
         return response.data;
     }
 }

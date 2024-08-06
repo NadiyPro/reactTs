@@ -28,9 +28,10 @@ export const commentSlice = createSlice({
         builder
             .addCase(loadComments.fulfilled, (state, action) => {
                 state.comments = action.payload;
+                state.isLoaded = true;
             })
             .addCase(loadComment.fulfilled, (state, action) => {
-                console.log(action.payload)
+                state.comment = action.payload;
             })
             .addMatcher(isRejected (loadPosts,loadPost), (state, action) => {
                 state.error = action.payload as string;
