@@ -20,8 +20,8 @@ export const router = createBrowserRouter(
                 {path:'posts', element: <PostsPage/>},
                 {path:'comments', element: <CommentsPage/>},
                 {path:'users/:id', element: <User/>},
-                {path:'posts/:id/', element: <Post/>},
-                {path:'comments/:id', element: <Comment/>}
+                {path:'users/:id/posts', element: <Post/>},
+                {path:'posts/:id/comments', element: <Comment/>}
             ]
         }
     ]

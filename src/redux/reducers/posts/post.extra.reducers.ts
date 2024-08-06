@@ -2,15 +2,15 @@ import {createAsyncThunk} from "@reduxjs/toolkit";
 import {postService} from "../../../service/api.service";
 import {AxiosError} from "axios";
 
-export const loadPosts = createAsyncThunk(
+export const loadPost = createAsyncThunk(
     'postSlice/loadPosts',
-    async (_, thunkAPI) => {
+    async (id:number, thunkAPI) => {
         try {
-            let response = await postService.getAll();
+            let response = await postService.getById(id);
             return thunkAPI.fulfillWithValue(response);
         } catch (e) {
-            let e1 = e as AxiosError;
-            return thunkAPI.rejectWithValue(e1);
+            let error = e as AxiosError;
+            return thunkAPI.rejectWithValue(error?.response?.data);
         }
     }
 )

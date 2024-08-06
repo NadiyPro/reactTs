@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {useAppDispatch, useAppSelector} from "../redux/store";
 import {userActions} from "../redux/slices/userSlice";
-import {useParams} from "react-router-dom";
+import {NavLink, useParams} from "react-router-dom";
 
 const User = () => {
     let {id} = useParams();
@@ -15,6 +15,7 @@ const User = () => {
     return (
         <div>
             {JSON.parse(JSON.stringify(user))}
+           <NavLink to={'/users/'+ id + '/posts'}>detail posts</NavLink>
         </div>
     );
 };
