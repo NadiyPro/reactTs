@@ -5,7 +5,7 @@ import {useParams} from "react-router-dom";
 
 const User = () => {
     let {id} = useParams();
-    let user = useAppSelector(state => state.userStore.user);
+    let {userStore: {user}} = useAppSelector(state => state);
 
     let dispatch = useAppDispatch();
 
@@ -14,7 +14,7 @@ const User = () => {
     }, [id]);
     return (
         <div>
-            {JSON.stringify(user)}
+            {JSON.parse(JSON.stringify(user))}
         </div>
     );
 };
