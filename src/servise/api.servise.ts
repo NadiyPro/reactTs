@@ -10,7 +10,7 @@ let axiosInstance = axios.create({
 });
 axiosInstance.interceptors.request.use(request => {
     if(localStorage.getItem('tokenPair') && request.url !== '/auth' && request.url !== '/auth/refresh')
-        request.headers.set('Authorization', 'Bearer' + retrieveLocalStorage<AuthTokenModule>('tokenPair').access);
+        request.headers.set('Authorization', 'Bearer ' + retrieveLocalStorage<AuthTokenModule>('tokenPair').access);
         return request;
 });
 
