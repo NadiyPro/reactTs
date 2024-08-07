@@ -42,4 +42,11 @@
     flex-direction: column;
 
 }
+button{
+    color: ghostwhite;
+    margin: 10px;
+    background-color: #4a555e;
+    border: none;
+    border-radius: 4px;
+}
 
