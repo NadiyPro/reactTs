@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {useParams} from "react-router-dom";
+import {NavLink, useParams} from "react-router-dom";
 import {useAppDispatch, useAppSelector} from "../redux/store";
 import {postActions} from "../redux/slices/postSlice";
 
@@ -11,18 +11,16 @@ const Post = () => {
 
     useEffect(() => {
         if(id) dispatch(postActions.loadPost(+id));
-    }, [id, dispatch]);
+        console.log(post)
+    }, [id]);
+
+    console.log(post);
     return (
         <div>
 
-            {post ? (
-                <div>
-                    <p>body: {post.body}</p>
-                    <p>title: {post.title}</p>
-                </div>
-            ) : (
-                <div>Loading...</div>
-            )}
+            {JSON.stringify(post)}
+                <NavLink to={'/posts/' + id + '/comments'}>detail comments</NavLink>
+
 
         </div>
     );

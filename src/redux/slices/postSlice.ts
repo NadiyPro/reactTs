@@ -30,7 +30,7 @@ export const postSlice = createSlice({
             })
             .addCase(loadPost.fulfilled, (state, action) => {
                 state.post = action.payload;
-                console.log(state.post)
+                console.log(state.post);
             })
             .addMatcher(isRejected (loadPosts,loadPost), (state, action) => {
                 state.error = action.payload as string;
