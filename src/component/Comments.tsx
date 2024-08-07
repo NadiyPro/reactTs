@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {useAppDispatch, useAppSelector} from "../redux/store";
 import {commentActions} from "../redux/slices/commentSlice";
 import {useNavigate} from "react-router-dom";
+import style from "../module/styleDom.module.css";
 
 const Comments = () => {
     const navigate = useNavigate();
@@ -14,15 +15,15 @@ const Comments = () => {
         dispatch(commentActions.loadComments());
     }, []);
     return (
-        <div>
+        <div className={style.styleUser}>
             {!isLoaded && <div>Loading in process....</div>}
 
             <h2>Comments</h2>
 
             {comments.map(comment =>
-                <div key={comment.id} >
+                <div key={comment.id} className={style.divRend}>
                     <h3>postId:{comment.postId}</h3>
-                    <h4>id:{comment.id}</h4>
+                    <h6>id:{comment.id}</h6>
                     <p>body:{comment.body}</p>
                     <button onClick={() => navigate('/users')}>back home page</button>
                 </div>)}

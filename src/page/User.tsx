@@ -21,7 +21,7 @@ const User = () => {
 
             {user &&
                 <div key={user.id} className={style.divRend}>
-                    <p>id:{user.id}</p>
+                    <h4>id:{user.id}</h4>
                     <p>name:{user.name} <br/> username:{user.username} <br/> email:{user.email}</p>
                     <button onClick={() => navigate('/users/' + user.id + '/posts')}>details post</button>
                 </div>}

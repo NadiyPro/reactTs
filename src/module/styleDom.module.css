@@ -49,4 +49,10 @@ button{
     border: none;
     border-radius: 4px;
 }
-
+p{
+    margin: 20px;
+}
+h2,h4{
+    margin: 0;
+    padding: 0;
+}
