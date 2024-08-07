@@ -17,7 +17,9 @@ const Users = () => {
 
             <h3>Users</h3>
 
-            {users.map(user => <div key={user.id}><NavLink to={'/users/' + user.id}><h3>{user.name}</h3></NavLink>
+            {users.map(user =>
+                <div key={user.id}>
+                   <p><NavLink to={'/users/' + user.id}><h3>{user.name}</h3></NavLink></p>
             </div>)}
         </div>
     );

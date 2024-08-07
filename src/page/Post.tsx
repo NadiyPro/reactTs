@@ -16,8 +16,11 @@ const Post = () => {
         <div>
             <h3>Comments</h3>
 
-            {post &&  post.map(value => <div key={value.id}><h3>userId:{value.userId}</h3>
-                <NavLink to={'/posts/' + id + '/comments'}>detail comments</NavLink></div>)}
+            {post &&  post.map(value =>
+                <div key={value.id}>
+                    <h3>userId:{value.userId}</h3>
+                    <p>id:{value.id} title:{value.title} body:{value.body}</p>
+                    <NavLink to={'/posts/' + id + '/comments'}>detail comments</NavLink></div>)}
 
 
         </div>

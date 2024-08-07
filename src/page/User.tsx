@@ -12,12 +12,17 @@ const User = () => {
 
     useEffect(() => {
         if(id) dispatch(userActions.loadUser(+id));
-    }, [id]);
+    }, [id,dispatch]);
     return (
         <div>
             <h3>User Details</h3>
 
-            {user && user.map(value => <div key={value.id}> <h3>{value.name}</h3><p><NavLink to={'/users/'+ value.id}><h3>{value.name}</h3></NavLink></p></div>)}
+            {user &&
+                <div key={user.id}>
+                <p>id:{user.id}</p>
+                <p>name:{user.name} username:{user.username} email:{user.email}</p>
+                <p><NavLink to={'/users/' + user.id + '/posts'}>details post</NavLink></p>
+                </div>}
         </div>
     );
 };
