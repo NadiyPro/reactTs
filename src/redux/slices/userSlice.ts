@@ -1,4 +1,4 @@
-import {createSlice, isFulfilled, isRejected} from "@reduxjs/toolkit";
+import {createSlice, isRejected} from "@reduxjs/toolkit";
 import {IUser} from "../../models/IUser";
 import {loadUsers} from "../reducers/users/users.extra.reducers";
 import {loadUser} from "../reducers/users/user.extra.reducers";
@@ -7,7 +7,7 @@ import {loadUser} from "../reducers/users/user.extra.reducers";
 type UserSliceType = {
     users: IUser[],
     isLoaded: boolean,
-    user: IUser | null | string,
+    user: IUser | null| string,
     error: string
 }
 

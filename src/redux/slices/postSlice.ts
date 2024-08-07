@@ -4,7 +4,7 @@ import {IPost} from "../../models/IPost";
 import {loadPost} from "../reducers/posts/post.extra.reducers";
 
 
-type PostSliceType = {
+export type PostSliceType = {
     posts: IPost[],
     isLoaded: boolean,
     post: IPost | null,
@@ -30,6 +30,7 @@ export const postSlice = createSlice({
             })
             .addCase(loadPost.fulfilled, (state, action) => {
                 state.post = action.payload;
+                console.log(state.post)
             })
             .addMatcher(isRejected (loadPosts,loadPost), (state, action) => {
                 state.error = action.payload as string;

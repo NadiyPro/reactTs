@@ -15,7 +15,8 @@ const User = () => {
     }, [id]);
     return (
         <div>
-            {(JSON.parse(JSON.stringify(user)) )} <NavLink to={'/users/' + id + '/posts'}>detail posts</NavLink>
+            <h3>User Details</h3>
+            {(JSON.parse(JSON.stringify(user)))} <p><NavLink to={'/users/' + id + '/posts'}>detail posts</NavLink></p>
         </div>
     );
 };

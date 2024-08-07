@@ -12,7 +12,7 @@ const Comments = () => {
     }, []);
     return (
         <div>
-            {comments.map(comment => <div key={comment.id}>postId:{comment.postId} id:{comment.id} body:{comment.body}</div>)}
+            {comments.map(comment => <div key={comment.id}><h3>postId:{comment.postId}</h3><p>id:{comment.id} body:{comment.body}</p> </div>)}
         </div>
     );
 };
