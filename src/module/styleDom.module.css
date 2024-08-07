@@ -7,6 +7,8 @@
     background-image: url("https://images.unsplash.com/photo-1713562861638-d320d29efd4e?q=80&w=1962&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
 }
 .menu{
+    width: 100%;
+    position: fixed;
     border: 3px solid lightslategrey;
     display: flex;
     justify-content: space-evenly;
@@ -37,6 +39,7 @@
     margin: 5px;
 }
 .styleUser{
+    padding-top: 30px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
