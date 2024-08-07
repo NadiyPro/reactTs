@@ -9,7 +9,7 @@ import {loadComment} from "../reducers/comments/comment.extra.reducers";
 type CommentSliceType = {
     comments: IComment[],
     isLoaded: boolean,
-    comment: IComment | null,
+    comment: IComment[] | null,
     error: string
 }
 

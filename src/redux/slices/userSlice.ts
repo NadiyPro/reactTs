@@ -7,7 +7,7 @@ import {loadUser} from "../reducers/users/user.extra.reducers";
 type UserSliceType = {
     users: IUser[],
     isLoaded: boolean,
-    user: IUser | null| string,
+    user: IUser[] | null,
     error: string
 }
 

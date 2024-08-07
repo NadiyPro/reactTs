@@ -8,7 +8,6 @@ export const loadPost = createAsyncThunk(
     async (userId:number, thunkAPI) => {
         try {
             let response = await postService.getById(userId);
-            console.log(response);
             return thunkAPI.fulfillWithValue(response);
         } catch (e) {
             let error = e as AxiosError;

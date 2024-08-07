@@ -11,15 +11,13 @@ const Post = () => {
 
     useEffect(() => {
         if(id) dispatch(postActions.loadPost(+id));
-        console.log(post)
     }, [id]);
-
-    console.log(post);
     return (
         <div>
+            <h3>Comments</h3>
 
-            {JSON.stringify(post)}
-                <NavLink to={'/posts/' + id + '/comments'}>detail comments</NavLink>
+            {post &&  post.map(value => <div key={value.id}><h3>userId:{value.userId}</h3>
+                <NavLink to={'/posts/' + id + '/comments'}>detail comments</NavLink></div>)}
 
 
         </div>

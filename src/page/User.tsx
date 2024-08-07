@@ -16,7 +16,8 @@ const User = () => {
     return (
         <div>
             <h3>User Details</h3>
-            {(JSON.parse(JSON.stringify(user)))} <p><NavLink to={'/users/' + id + '/posts'}>detail posts</NavLink></p>
+
+            {user && user.map(value => <div key={value.id}> <h3>{value.name}</h3><p><NavLink to={'/users/'+ value.id}><h3>{value.name}</h3></NavLink></p></div>)}
         </div>
     );
 };

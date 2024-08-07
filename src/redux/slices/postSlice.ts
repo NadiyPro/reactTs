@@ -7,7 +7,7 @@ import {loadPost} from "../reducers/posts/post.extra.reducers";
 export type PostSliceType = {
     posts: IPost[],
     isLoaded: boolean,
-    post: IPost | null,
+    post: IPost[] | null,
     error: string
 }
 

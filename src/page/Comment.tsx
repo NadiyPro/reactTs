@@ -14,7 +14,10 @@ const Comment = () => {
     }, [id]);
     return (
         <div>
-            {JSON.stringify(comment)}
+            <h3>Comments</h3>
+
+            {comment && comment.map(value => <div key={value.id}><h3>postId:{value.postId}</h3>
+                <p>id:{value.id} body:{value.body}</p></div>)}
         </div>
     );
 };

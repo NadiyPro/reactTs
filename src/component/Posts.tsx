@@ -20,6 +20,8 @@ const Posts = () => {
         <div>
             {!isLoaded && <div>Loading in process....</div>}
 
+            <h3>Posts</h3>
+
             {posts.map(post => <div key={post.id}><h3>userId:{post.userId}</h3>
                 <p>id:{post.id} title:{post.title} body:{post.body}</p>
                 <p><NavLink to={'/posts/' + post.userId + '/comments'}>detail comments</NavLink></p></div>)}
@@ -27,4 +29,4 @@ const Posts = () => {
     );
 };
 
-    export default Posts;
+export default Posts;

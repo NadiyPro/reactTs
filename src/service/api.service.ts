@@ -15,8 +15,8 @@ export const userService = {
         const response = await axiosInstance.get<IUser[]>(urls.users.base);
         return response.data;
     },
-    getById: async (id:number):Promise<IUser>=> {
-        const response = await axiosInstance.get<IUser>(urls.users.byId(id));
+    getById: async (id:number):Promise<IUser[]>=> {
+        const response = await axiosInstance.get<IUser[]>(urls.users.byId(id));
         return response.data;
     }
 }
@@ -26,8 +26,8 @@ export const postService = {
         let response = await axiosInstance.get<IPost[]>(urls.posts.base);
         return response.data;
     },
-    getById: async (userId:number):Promise<IPost>=> {
-        const response = await axiosInstance.get<IPost>(urls.posts.byId(userId));
+    getById: async (userId:number):Promise<IPost[]>=> {
+        const response = await axiosInstance.get<IPost[]>(urls.posts.byId(userId));
         return response.data;
     }
 }
@@ -37,8 +37,8 @@ export const commentsService = {
         let response = await axiosInstance.get<IComment[]>(urls.comments.base);
         return response.data;
     },
-    getById: async (id:number):Promise<IComment>=> {
-        const response = await axiosInstance.get<IComment>(urls.comments.byId(id));
+    getById: async (id:number):Promise<IComment[]>=> {
+        const response = await axiosInstance.get<IComment[]>(urls.comments.byId(id));
         return response.data;
     }
 }

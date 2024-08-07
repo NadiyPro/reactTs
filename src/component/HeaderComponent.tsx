@@ -1,16 +1,16 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 
+
 const HeaderComponent = () => {
     return (
 
-            <ul>
-                <li><NavLink to={'users'}>users</NavLink></li>
-                <li><NavLink to={'posts'}>posts</NavLink></li>
-                <li><NavLink to={'comments'}>comments</NavLink></li>
-            </ul>
+            <div>
+                <div><NavLink to={'users'}>users </NavLink></div>
+                <div><NavLink to={'posts'}>posts </NavLink></div>
+                <div><NavLink to={'comments'}>comments </NavLink></div>
+            </div>
 
-    );
-};
+    );}
 
 export default HeaderComponent;

@@ -15,7 +15,10 @@ const Comments = () => {
         <div>
             {!isLoaded && <div>Loading in process....</div>}
 
-            {comments.map(comment => <div key={comment.id}><h3>postId:{comment.postId}</h3><p>id:{comment.id} body:{comment.body}</p> </div>)}
+            <h3>Comments</h3>
+
+            {comments.map(comment => <div key={comment.id}><h3>postId:{comment.postId}</h3>
+                <p>id:{comment.id} body:{comment.body}</p></div>)}
         </div>
     );
 };

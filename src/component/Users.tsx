@@ -15,7 +15,10 @@ const Users = () => {
         <div>
             {!isLoaded && <div>Loading in process....</div>}
 
-            {users.map(user => <div key={user.id}> <NavLink to={'/users/'+ user.id}><h3>{user.name}</h3></NavLink></div>)}
+            <h3>Users</h3>
+
+            {users.map(user => <div key={user.id}><NavLink to={'/users/' + user.id}><h3>{user.name}</h3></NavLink>
+            </div>)}
         </div>
     );
 };
