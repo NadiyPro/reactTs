@@ -23,7 +23,7 @@ const Comments = () => {
             {comments.map(comment =>
                 <div key={comment.id} className={style.divRend}>
                     <h3>postId:{comment.postId}</h3>
-                    <h6>id:{comment.id}</h6>
+                    <h4>id:{comment.id}</h4>
                     <p>body:{comment.body}</p>
                     <button onClick={() => navigate('/users')}>back home page</button>
                 </div>)}
