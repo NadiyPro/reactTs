@@ -3,15 +3,18 @@ import {useAppDispatch, useAppSelector} from "../redux/store";
 import {commentActions} from "../redux/slices/commentSlice";
 
 const Comments = () => {
-    let {commentStore:{comments}} = useAppSelector(state => state);
+    const comments = useAppSelector(state => state.commentStore.comments);
+    const isLoaded = useAppSelector(state => state.postStore.isLoaded);
 
-    let dispatch = useAppDispatch();
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
         dispatch(commentActions.loadComments());
     }, []);
     return (
         <div>
+            {!isLoaded && <div>Loading in process....</div>}
+
             {comments.map(comment => <div key={comment.id}><h3>postId:{comment.postId}</h3><p>id:{comment.id} body:{comment.body}</p> </div>)}
         </div>
     );

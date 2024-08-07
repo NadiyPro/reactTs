@@ -5,10 +5,10 @@ import {NavLink, useParams} from "react-router-dom";
 
 
 const User = () => {
-    let {id} = useParams();
-    let {userStore: {user}} = useAppSelector(state => state);
+    const {id} = useParams();
+    const user = useAppSelector(state => state.userStore.user);
 
-    let dispatch = useAppDispatch();
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
         if(id) dispatch(userActions.loadUser(+id));

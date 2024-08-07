@@ -4,10 +4,10 @@ import {useAppDispatch, useAppSelector} from "../redux/store";
 import {commentActions} from "../redux/slices/commentSlice";
 
 const Comment = () => {
-    let {id} = useParams();
-    let {commentStore: {comment}} = useAppSelector(state => state);
+    const {id} = useParams();
+    const comment = useAppSelector(state => state.commentStore.comment);
 
-    let dispatch = useAppDispatch();
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
         if(id) dispatch(commentActions.loadComment(+id));

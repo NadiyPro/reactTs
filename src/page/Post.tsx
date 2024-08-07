@@ -4,10 +4,10 @@ import {useAppDispatch, useAppSelector} from "../redux/store";
 import {postActions} from "../redux/slices/postSlice";
 
 const Post = () => {
-    let {id} = useParams();
-    let post = useAppSelector(state => state.postStore.post);
+    const {id} = useParams();
+    const post = useAppSelector(state => state.postStore.post);
 
-    let dispatch = useAppDispatch();
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
         if(id) dispatch(postActions.loadPost(+id));
@@ -17,12 +17,13 @@ const Post = () => {
 
             {post ? (
                 <div>
-                    <p><strong>body:</strong> {post.body}</p>
-                    <p><strong>title:</strong> {post.title}</p>
+                    <p>body: {post.body}</p>
+                    <p>title: {post.title}</p>
                 </div>
             ) : (
                 <div>Loading...</div>
             )}
+
         </div>
     );
 };
