@@ -1,9 +1,10 @@
 import React, { useEffect} from 'react';
 import {useAppDispatch, useAppSelector} from "../redux/store";
 import {postActions} from "../redux/slices/postSlice";
-import {NavLink, useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
 const Posts = () => {
+    const navigate = useNavigate();
     const {id} = useParams();
     const posts = useAppSelector(state => state.postStore.posts);
     const isLoaded = useAppSelector(state => state.postStore.isLoaded);
@@ -25,8 +26,8 @@ const Posts = () => {
             {posts.map(post =>
                 <div key={post.id}>
                     <h3>userId:{post.userId}</h3>
-                <p>id:{post.id} title:{post.title} body:{post.body}</p>
-                <p><NavLink to={'/posts/' + post.userId + '/comments'}>detail comments</NavLink></p>
+                    <p>id:{post.id} title:{post.title} body:{post.body}</p>
+                    <button onClick={() => navigate('/posts/' + post.userId + '/comments')}>detail comments</button>
                 </div>)}
         </div>
     );
