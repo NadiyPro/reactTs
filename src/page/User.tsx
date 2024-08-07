@@ -19,7 +19,7 @@ const User = () => {
             <h3>User Details</h3>
 
             {user &&
-                <div key={user.id}>
+                <div key={user.id} >
                     <p>id:{user.id}</p>
                     <p>name:{user.name} <br/> username:{user.username} <br/> email:{user.email}</p>
                     <button onClick={() => navigate('/users/' + user.id + '/posts')}>details post</button>

@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {useAppDispatch, useAppSelector} from "../redux/store";
 import {userActions} from "../redux/slices/userSlice";
 import {NavLink} from "react-router-dom";
+import style from "../module/styleDom.module.css";
 
 const Users = () => {
     const users= useAppSelector(state => state.userStore.users);
@@ -12,14 +13,14 @@ const Users = () => {
         dispatch(userActions.loadUsers());
     }, []);
     return (
-        <div>
+        <div className={style.styleUser}>
             {!isLoaded && <div>Loading in process....</div>}
 
-            <h3>Users</h3>
+            <h2>Users</h2>
 
             {users.map(user =>
-                <div key={user.id}>
-                   <p><NavLink to={'/users/' + user.id}>{user.name}</NavLink></p>
+                <div key={user.id} className={style.divRend}>
+                   <p><NavLink to={'/users/' + user.id} style={{color:'#4a555e'}}>{user.name}</NavLink></p>
             </div>)}
         </div>
     );

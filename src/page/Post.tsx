@@ -18,7 +18,7 @@ const Post = () => {
             <h3>Comments</h3>
 
             {post &&  post.map(value =>
-                <div key={value.id}>
+                <div key={value.id} >
                     <h3>userId:{value.userId}</h3>
                     <p>id:{value.id} title:{value.title} body:{value.body}</p>
                     <button onClick={() => navigate('/posts/' + id + '/comments')}>detail comments</button>

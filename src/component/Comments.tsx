@@ -17,12 +17,13 @@ const Comments = () => {
         <div>
             {!isLoaded && <div>Loading in process....</div>}
 
-            <h3>Comments</h3>
+            <h2>Comments</h2>
 
             {comments.map(comment =>
-                <div key={comment.id}>
+                <div key={comment.id} >
                     <h3>postId:{comment.postId}</h3>
-                    <p>id:{comment.id} body:{comment.body}</p>
+                    <h4>id:{comment.id}</h4>
+                    <p>body:{comment.body}</p>
                     <button onClick={() => navigate('/users')}>back home page</button>
                 </div>)}
 
