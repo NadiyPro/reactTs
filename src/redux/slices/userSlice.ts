@@ -8,14 +8,14 @@ type UserSliceType = {
     users: IUser[],
     isLoaded: boolean,
     user: IUser | null,
-    error: string
+    error: any
 }
 
 const userInitState: UserSliceType = {
     users: [],
     isLoaded: false,
     user: null,
-    error:''
+    error: null
 }
 
 export const userSlice = createSlice({

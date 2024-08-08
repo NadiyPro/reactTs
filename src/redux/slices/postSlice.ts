@@ -8,14 +8,14 @@ export type PostSliceType = {
     posts: IPost[],
     isLoaded: boolean,
     post: IPost[] | null,
-    error: string
+    error: any
 }
 
 const postInitState: PostSliceType = {
     posts: [],
     isLoaded: false,
     post: null,
-    error: ''
+    error: null
 }
 
 export const postSlice = createSlice({

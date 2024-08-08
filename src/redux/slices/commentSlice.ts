@@ -10,14 +10,14 @@ type CommentSliceType = {
     comments: IComment[],
     isLoaded: boolean,
     comment: IComment[] | null,
-    error: string
+    error: any
 }
 
 const commentInitState: CommentSliceType = {
     comments: [],
     isLoaded: false,
     comment: null,
-    error: ''
+    error: null
 }
 
 export const commentSlice = createSlice({
